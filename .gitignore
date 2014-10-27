@@ -1,11 +1,11 @@
 # Ignore paths that contain user-generated content.
-/sites/*/files
-/sites/*/private
-/files/*
-/cache
+# /sites/*/files
+# /sites/*/private
+# /files/*
+# /cache
 
 # Ignore configuration files that may contain sensitive information.
-sites/*/settings*.php
+/sites/*/settings*.php
 
 # ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
 /sites/default/**/files
