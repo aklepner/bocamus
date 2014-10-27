@@ -1,0 +1,20 @@
+***************
+*** 825,832 ****
+      )
+    );
+  
+-   $teaser = $node->body[$language_to_display][0]['safe_summary'];
+-   $body = $node->body[$language_to_display][0]['safe_value'];
+  
+    ob_start();
+    print eval('?>' . $tmplt);
+--- 825,833 ----
+      )
+    );
+  
++   //CCK supports nodes without body.
++   $teaser = (isset($node->body)) ? $node->body[$language_to_display][0]['safe_summary'] : '';
++   $body = (isset($node->body)) ? $node->body[$language_to_display][0]['safe_summary'] : '';
+  
+    ob_start();
+    print eval('?>' . $tmplt);

@@ -1,0 +1,28 @@
+From 7b55075a9dca0580e7fbbd1b5416cf7b3ecef6a9 Mon Sep 17 00:00:00 2001
+From: Carlo Landmeter <clandmeter@gmail.com>
+Date: Sun, 3 Apr 2011 14:53:46 +0000
+Subject: [PATCH] CCK supports content types without $body
+
+---
+ contemplate.module |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/contemplate.module b/contemplate.module
+index 135f4c2..6d63bde 100644
+--- a/contemplate.module
++++ b/contemplate.module
+@@ -810,8 +810,9 @@ function contemplate_eval($tmplt, $obj, &$xml_elements) {
+     )
+   );
+ 
+-  $teaser = $node->body[$language_to_display][0]['safe_summary'];
+-  $body = $node->body[$language_to_display][0]['safe_value'];
++  //CCK supports nodes without body.
++  $teaser = (isset($node->body)) ? $node->body[$language_to_display][0]['safe_summary'] : '';
++  $body = (isset($node->body)) ? $node->body[$language_to_display][0]['safe_summary'] : '';
+ 
+   ob_start();
+   print eval('?>' . $tmplt);
+-- 
+1.7.4.2
+
