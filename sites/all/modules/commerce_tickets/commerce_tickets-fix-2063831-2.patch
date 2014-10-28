@@ -1,0 +1,16 @@
+diff --git a/commerce_tickets.module b/commerce_tickets.module
+index 3408464..c5a062c 100644
+--- a/commerce_tickets.module
++++ b/commerce_tickets.module
+@@ -181,8 +181,9 @@ function commerce_tickets_field_formatter_view($object_type, $object, $field, $i
+       $display[$ticket->product_id] = $ticket->title;
+     }
+ 
+-    $element[$delta] = array(
+-        '#markup' => drupal_render(drupal_get_form('commerce_tickets_purchase_form', $object, $display, $button_text, $settings)),
++    $form = drupal_get_form('commerce_tickets_purchase_form', $object, $display, $button_text, $settings);
++    $element[$delta] = array(        
++        '#markup' => drupal_render($form)
+     );
+   }
+ 
