@@ -1,0 +1,88 @@
+/* @override http://brma-dev.local:8080/sites/default/files/css_injector/css_injector_11.css?ncrvq0 */
+
+/* @override http://brma-dev.local:8080/sites/default/files/css_injector/css_injector_11.css?ncros5 */
+
+body {
+	background-color: #ffffff;
+}
+
+#footcol2 {
+	float: left;
+	margin-right: 2%;
+	width: 18%;
+	min-width: 180px;
+	font-size: 12px;
+}
+
+#footer div.container {
+	border-top: 1px solid #c6c6c6;
+	padding-top: 30px;
+}
+
+#footcol2 p strong {
+	font-size: 14px;
+	line-height: 10px;
+}
+
+
+div.region.region-footer input#edit-submit.form-submit {
+	cursor: pointer;
+	text-indent: -9999px;
+	border: none;
+	width: 38px;
+	height: 38px;
+	background: url(../magglassbutton.png) no-repeat -5px -8px;
+}
+
+div.region.region-footer input#edit-submit--2.form-submit {
+	cursor: pointer;
+	text-indent: -9999px;
+	border: none;
+	width: 38px;
+	height: 38px;
+	background: url(../magglassbutton.png) no-repeat -5px -8px;
+}
+
+#edit-search-block-form--2 {
+	height: 24px;
+}
+
+#block-block-2 {
+	position: static;
+	z-index: -1000000000;
+	border-top: 1px solid #cecece;
+	padding-top: 20px;
+}
+
+@media only screen and (min-width: 968px) {
+
+/* tablets and desktop */
+
+#search-block-form {
+	position: relative;
+	z-index: 2;
+	top: -200px;
+	width: 400px;
+}
+
+#block-block-7 {
+	position: relative;
+	z-index: 2;
+	top: -200px;
+	width: 500px;
+}
+
+}
+
+@media only screen and (max-width: 900px) {
+
+/* phones */
+
+}
+
+@media only screen and (max-width: 900px) and (orientation: portrait) {
+
+/* portrait phones */
+
+}
+

@@ -1,0 +1,47 @@
+/* @override http://brma-dev.local:8080/sites/default/files/css_injector/css_injector_6.css?ncpl3m */
+
+
+div.field.field-name-field-featured-title.field-type-link-field.field-label-hidden a {
+	color: #fff;
+	text-transform: uppercase;
+}
+
+
+
+#block-system-main div.fieldable-panels-pane div.field-item.even {
+	padding-top: 10px;
+}
+
+div.field.field-name-field-featured-title.field-type-link-field.field-label-hidden {
+	font-weight: 800;
+	color: #000;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+div.fieldable-panels-pane p {
+	font-weight: 800;
+	font-size: 13px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+div.panopoly-spotlight-wrapper {
+	background-color: #FFF;
+	max-width: 100%;
+	opacity: .75;
+}
+
+.pane-bundle-spotlight .panopoly-spotlight-label {
+	background-color: #FFF;
+	width: 500px;
+	max-width: 50%;
+	opacity: .75;
+}
+
+.pane-bundle-spotlight .panopoly-spotlight-info {
+	padding: .7em;
+	background-color: #FFFFFF;
+	color: #000;
+	opacity: .75;
+}

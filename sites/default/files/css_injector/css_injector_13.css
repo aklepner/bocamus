@@ -1,0 +1,94 @@
+/* @override http://brma-dev.local:8080/sites/default/files/css_injector/css_injector_13.css?nde3xj */
+
+div.upcomingexhib {
+	width: 95%;
+	float: left;
+}
+
+div.outsideslidert {
+	width: 5%;
+	float: left;
+}
+
+.slide {
+	background: #ffffff;
+	width: 305px;
+	margin-bottom: 220px;
+}
+
+.slide :hover {
+	background: #c6c5c7;
+}
+
+#exhib_slide :hover {
+	background: #c6c5c7;
+}
+
+div.exhib_info {
+	padding: 15px;
+	line-height: 22px;
+}
+
+#exhib_slide {
+	margin-bottom: 10px;
+}
+
+#exhib_slide:hover {
+	background: #c6c5c7;
+}
+
+div.exhib_title {
+	color: #333;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 13px;
+	letter-spacing: 0;
+	line-height: 16px;
+	text-transform: uppercase;
+	transition: color .1s linear;
+	-webkit-transition: color .1s linear;
+	width: 205px;
+}
+
+#exhib_slide div.exhib_category {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background-color: #000;
+}
+
+div.exhib_date {
+	color: #8d8d8d;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	letter-spacing: 0;
+	line-height: 16px;
+	text-transform: uppercase;
+	transition: color .1s linear;
+	-webkit-transition: color .1s linear;
+}
+
+div.exhib_title a {
+	color: #000000;
+	text-decoration: none;
+}
+
+/** Page
+===================================*/
+
+div.view.view-exhibition-page.view-id-exhibition_page div.views-field.views-field-nothing {
+	width: 250px;
+}
+
+.exhibrow span.field-content :hover {
+	background: #c6c5c7;
+}
+
+.exhibrow span.field-content {
+	min-height: 450px;
+	width: 250px;
+	float: left;
+	margin-right: 10px;
+}

@@ -1,0 +1,16 @@
+/**/
+
+div.masonry-brick {
+	width: 150px;
+	margin-bottom: 10px;
+}
+div.masonry-brick:hover {
+	background-color: #cecece;
+}
+
+div.brma_collection_item_title {
+	font-weight: 800;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}

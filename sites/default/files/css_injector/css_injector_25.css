@@ -1,0 +1,28 @@
+div.masonry-brick {
+	background-color: #424242;
+}
+div.masonry-brick:hover {
+	background-color: #000;
+}
+
+
+div.masonry-brick h4.field-content a{
+	color: #fff;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+div.masonry-brick h4.field-content {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+}
+
+
+div.view-content.masonry div.masonry-brick{
+		margin-bottom: 10px;
+}
+
+.permcollbox.masonry-brick {
+	margin-bottom: 10px;
+}

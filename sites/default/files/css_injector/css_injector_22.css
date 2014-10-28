@@ -1,0 +1,31 @@
+div.region.region-secondary-content li {
+	display: inline-block;
+	font-size: 13px;
+	float: left;
+	margin-right: 50px;
+}
+
+div.region.region-secondary-content ul.menu.clearfix {
+	margin-top: -8px;
+	margin-bottom: 20px;
+	border-top: 1px solid #cecece;
+	border-bottom: 1px solid #cecece;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 0;
+}
+
+div.region.region-secondary-content a {
+	color: #393a39;
+	text-transform: uppercase;
+}
+div.region.region-secondary-content li a.active-trail.active {
+	font-weight: bold;
+	background-color: #000;
+	color: #ffffff;
+	font-family: "Open Sans";
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+
