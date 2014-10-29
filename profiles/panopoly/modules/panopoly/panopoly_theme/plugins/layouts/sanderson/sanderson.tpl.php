@@ -24,19 +24,6 @@
       </div>
     </div>
   </div>
-
-
-  <div class="sanderson-container sanderson-column-content sanderson-column-content-row2 clearfix row-fluid">
-    <div class="sanderson-column-content-region sanderson-middlecolumn1 panel-panel span6">
-      <div class="sanderson-column-content-region-inner sanderson-column1-inner panel-panel-inner">
-        <?php print $content['middlecolumn1']; ?>
-      </div>
-    </div>
-  
-  </div>
-
-
-
   
   <div class="sanderson-container sanderson-secondary-column-content sanderson-column-content-row2 clearfix row-fluid">
     <div class="sanderson-secondary-column-content-region sanderson-secondary-column1 panel-panel span4">

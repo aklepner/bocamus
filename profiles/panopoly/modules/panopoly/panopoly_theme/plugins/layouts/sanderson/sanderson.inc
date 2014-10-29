@@ -9,9 +9,8 @@ $plugin = array(
   'regions' => array(
     'column1' => t('Row 1: First Column'),
     'column2' => t('Row 1: Second Column'),
-    'middlecolumn1' => t('Row 2: 1 Column'),
-    'secondarycolumn1' => t('Row 3: First Column'),
-    'secondarycolumn2' => t('Row 3: Second Column'),
-    'secondarycolumn3' => t('Row 3: Third Column'),
+    'secondarycolumn1' => t('Row 2: First Column'),
+    'secondarycolumn2' => t('Row 2: Second Column'),
+    'secondarycolumn3' => t('Row 2: Third Column'),
   ),
 );

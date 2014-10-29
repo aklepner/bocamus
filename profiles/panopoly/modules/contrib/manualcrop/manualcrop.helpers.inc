@@ -266,6 +266,24 @@ function manualcrop_croptool_process(&$form, &$form_state, &$element, $file, $se
 }
 
 /**
+ * Adds the #after_build entry to a media element.
+ *
+ * @param $element
+ *   The element to alter.
+ *
+ * @return
+ *   TRUE if the element was altered, FALSE otherwise.
+ */
+function _manualcrop_media_element_add_after_build(&$element) {
+  if (isset($element['#media_options']['global'])) {
+    $element['#after_build'][] = 'manualcrop_media_element_process';
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
  * Get the unique javascript crop settings identifier.
  *
  * @param $data
@@ -305,7 +323,6 @@ function _manualcrop_attach_dependencies(&$element, $form_state, $js_identifier,
   _manualcrop_attach_files($element);
 
   if (!isset($added[$js_identifier]) || $added[$js_identifier] != $form_state['rebuild']) {
-    $first = empty($added);
     $added[$js_identifier] = $form_state['rebuild'];
 
     // Generate image style settings.
@@ -325,7 +342,7 @@ function _manualcrop_attach_dependencies(&$element, $form_state, $js_identifier,
     $element['#attached']['js'][] = array(
       'data' => array(
         'manualcrop' => array(
-          'styles' => $first ? $styles : array(),
+          'styles' => $styles,
           'elements' => array(
             $js_identifier => array(
               'keyboard' => !empty($settings['manualcrop_keyboard']),
@@ -549,38 +566,33 @@ function _manualcrop_add_croptool(&$element, $value, &$form_state, $fid, $js_ide
  *   and field_name.
  */
 function _manualcrop_process_file_entity_form(&$form, &$form_state, $instance_info) {
-  // Get the field instance settings.
-  $settings = array();
+  // Check if a field instance was specified and get its settings.
   if (!empty($instance_info['entity_type']) && !empty($instance_info['bundle']) && !empty($instance_info['field_name'])) {
-    // Get the field instance.
     $instance = field_info_instance($instance_info['entity_type'], $instance_info['field_name'], $instance_info['bundle']);
 
     if (!empty($instance)) {
-      // A field instance was found, use its settings.
       $settings = $instance['widget']['settings'];
-
-      if (empty($settings['manualcrop_enable'])) {
-        // Manual Crop isn't enabled.
-        return;
-      }
     }
   }
-  else {
-    // Get the widget settings for the file entity.
+
+  // No valid fields instance specified, use the File Entity settings.
+  if (!isset($settings)) {
     $settings = variable_get('manualcrop_file_entity_settings_' . $form['#entity']->type, manualcrop_default_widget_settings());
   }
 
-  // Add the croptool.
-  manualcrop_croptool_process($form, $form_state, $form, $form['#entity'], $settings);
+  // Add the croptool if Manual Crop has been enabled.
+  if (!empty($settings['manualcrop_enable'])) {
+    manualcrop_croptool_process($form, $form_state, $form, $form['#entity'], $settings);
 
-  // Add the submit handler. Sometimes we have to add it to the action button
-  // and sometimes we have to add it to the general #submit, based on whether
-  // or not the submit button already has a handler.
-  if (!empty($form['actions']['submit']['#submit'])) {
-    $form['actions']['submit']['#submit'][] = 'manualcrop_croptool_submit';
-  }
-  else {
-    $form['#submit'][] = 'manualcrop_croptool_submit';
+    // Add the submit handler. Sometimes we have to add it to the action button
+    // and sometimes we have to add it to the general #submit, based on whether
+    // or not the submit button already has a handler.
+    if (!empty($form['actions']['submit']['#submit'])) {
+      $form['actions']['submit']['#submit'][] = 'manualcrop_croptool_submit';
+    }
+    else {
+      $form['#submit'][] = 'manualcrop_croptool_submit';
+    }
   }
 }
 
